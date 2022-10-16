@@ -19,7 +19,7 @@ class AccountCubit extends Cubit<AccountState> {
           username: loginDto.username.toString(),
           token: loginDto.token.toString(),
           refreshToken: loginDto.refreshToken.toString(),
-          preferences: loginDto.preferences!,
+          // preferences: loginDto.preferences!,
           apiKey: loginDto.apiKey.toString(),
           email: loginDto.email.toString());
       // await setCurrentUser(user);

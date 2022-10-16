@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kapi/data/kavita/models/libraryDto.dart';
 import 'package:kapi/logic/cubit/library_cubit.dart';
-import 'package:kapi/screens/series_screen.dart';
+import 'package:kapi/screens/series_list_screen.dart';
 
 import '../data/kavita/models/library.dart';
 
@@ -18,33 +18,31 @@ class MySearchScreen extends StatelessWidget {
         builder: (context, state) {
           if (state is LibraryInfoLoaded) {
             // return Text(LibraryInfoLoaded(state.libraryNames).toString());
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView.separated(
-                  itemCount: state.libraryNames.length,
-                  separatorBuilder: (context, index) => const Divider(
-                        thickness: 1,
-                      ),
-                  itemBuilder: (context, index) {
-                    final LibraryDto library = state.libraryNames[index];
+            return ListView.separated(
+                itemCount: state.libraryNames.length,
+                separatorBuilder: (context, index) => const Divider(
+                      thickness: 1,
+                    ),
+                itemBuilder: (context, index) {
+                  final LibraryDto library = state.libraryNames[index];
 
-                    return ListTile(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: ((context) =>
-                                MySeriesScreen(libraryId: library.id!))));
-                        // print(library.id);
-                      },
-                      // leading: FaIcon(FontAwesomeIcons.bookOpen),
-                      leading: FaIcon(getLibraryTypeIcon(
-                          format: LibraryType.values[library.type!])),
-                      title: Text(library.name!),
-                    );
-                  }),
-            );
+                  return ListTile(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: ((context) =>
+                              MySeriesListScreen(libraryId: library.id!))));
+                      // print(library.id);
+                    },
+                    // leading: FaIcon(FontAwesomeIcons.bookOpen),
+                    leading: FaIcon(getLibraryTypeIcon(
+                        format: LibraryType.values[library.type!])),
+                    title: Text(library.name!),
+                  );
+                });
           }
           if (state is LibraryLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(child: Text(state.toString()));
+            // return const Center(child: CircularProgressIndicator());
           } else {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -75,3 +73,10 @@ getLibraryTypeIcon({format: LibraryType}) {
       return FontAwesomeIcons.bookOpen; // 'fa-book-open'
   }
 }
+
+// home Home
+// star Want To Read
+// list Collections
+// list-ol Reading Lists
+// bookmark Bookmarks
+// fa fa-rectangle-list fa-regular All Series

@@ -24,7 +24,7 @@ class AccountRepository {
   AccountRepository();
 
   login(loginData) async {
-    ApiClient.init();
+    await ApiClient.init();
 
     LoginDto _loginDto = await apiClient.accountService.login(loginData);
     return _loginDto;

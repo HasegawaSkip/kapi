@@ -12,7 +12,10 @@ class ServerRepository {
   Future<List<Server>> getAllServers() async {
     final prefs = await SharedPreferences.getInstance();
     final keys = prefs.getKeys();
+
     keys.remove('Current Server');
+    keys.remove('kavita-lastlogin');
+    keys.remove('kavita-user');
     // final prefsMap = <String, dynamic>{};
     // for (String key in keys) {
     //   prefsMap[key] = prefs.get(key);
@@ -20,7 +23,6 @@ class ServerRepository {
     //   print(Server.fromJson(jsonDecode(prefsMap[key])));
     // }
     // return keys.map((e) => Server.fromJson(prefsMap[e])).toList();
-
     return keys
         .map((key) => Server.fromJson(jsonDecode(prefs.getString(key)!)))
         .toList();

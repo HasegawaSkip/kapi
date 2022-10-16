@@ -3,9 +3,11 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:kapi/data/kavita/api/library_service.dart';
 import 'package:kapi/data/kavita/api/series_service.dart';
+import 'package:kapi/data/kavita/models/login_dto/preferences.dart';
 // import 'package:kapi/data/kavita/models/kavitaUser.dart';
 import 'package:kapi/data/models/server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/kavitaUser.dart';
 import '../models/login_dto/login_dto.dart';
 import 'account_service.dart';
 
@@ -25,22 +27,35 @@ class ApiClient {
 
   static init() async {
     String userKey = 'kavita-user';
-    // String lastLoginKey = 'kavita-lastlogin';
-
+    String lastLoginKey = 'kavita-lastlogin';
+    late KavitaUser user;
     final prefs = await SharedPreferences.getInstance();
     final Server server =
         Server.fromJson(jsonDecode(prefs.getString('Current Server')!));
+    // if (prefs.getString(userKey) != null) {
+    //   user = KavitaUser.fromJson(jsonDecode(prefs.getString(userKey)!));
+    // } else {
+    final _accountService =
+        AccountService(Dio(BaseOptions(baseUrl: server.url)));
+    final LoginDto _loginDto = await _accountService
+        .login({"username": server.username, "password": server.password});
 
-    final LoginDto _loginDto =
-        await AccountService(Dio(BaseOptions(baseUrl: server.url)))
-            .login({"username": server.username, "password": server.password});
-    // final KavitaUser user =
-    //     KavitaUser.fromJson(jsonDecode(prefs.getString(userKey)!));
+    user = KavitaUser(
+        username: _loginDto.username.toString(),
+        token: _loginDto.token.toString(),
+        refreshToken: _loginDto.refreshToken.toString(),
+        // preferences: Preferences.fromJson(_loginDto.preferences!.toJson()),
+        apiKey: _loginDto.apiKey.toString(),
+        email: _loginDto.email.toString());
+
+    await prefs.setString(userKey, jsonEncode(user));
+    await prefs.setString(lastLoginKey, user.username);
+    // }
 
     _apiClient!.dio = Dio(
       BaseOptions(
         baseUrl: server.url,
-        headers: {'Authorization': 'Bearer ${_loginDto.token}'},
+        headers: {'Authorization': 'Bearer ${user.token}'},
       ),
     );
 

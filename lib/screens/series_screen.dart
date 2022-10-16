@@ -1,51 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kapi/data/kavita/repositories/series.repository.dart';
-import 'package:kapi/logic/cubit/series_cubit.dart';
 
-import '../data/kavita/models/series.dart';
+import 'package:kapi/data/kavita/models/series/series.dart';
 
 class MySeriesScreen extends StatelessWidget {
-  final int libraryId;
+  final Series series;
   const MySeriesScreen({
     Key? key,
-    required this.libraryId,
+    required this.series,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SeriesCubit()..getSeriesForLibrary(libraryId),
-      child: Scaffold(body: SeriesScreen()),
-    );
+    return Scaffold(
+        appBar: AppBar(title: Text(series.name!)),
+        body: SeriesScreen(series: series));
   }
 }
 
 class SeriesScreen extends StatelessWidget {
   const SeriesScreen({
     Key? key,
+    required this.series,
   }) : super(key: key);
+
+  final Series series;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SeriesCubit, SeriesState>(
-      builder: (context, state) {
-        if (state is SeriesLoaded) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListView.builder(
-                itemCount: state.seriesList.length,
-                itemBuilder: ((context, index) {
-                  final Series series = state.seriesList[index];
-                  return Card(
-                    child: ListTile(title: Text(series.name!)),
-                  );
-                })),
-          );
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
-      },
-    );
+    return Center(child: Text(series.name!));
   }
 }
