@@ -1,0 +1,39 @@
+[
+    {
+      "id": 3,
+      "name": "Calibre",
+      "lastScanned": "2022-10-16T00:00:16.6286505",
+      "type": 2,
+      "folders": [
+        "C:\\Users\\Admin\\Calibre Library"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Comics",
+      "lastScanned": "2022-10-16T00:00:15.3947905",
+      "type": 1,
+      "folders": [
+        "F:\\Comics"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Manga",
+      "lastScanned": "2022-10-16T00:00:14.8882569",
+      "type": 0,
+      "folders": [
+        "F:\\Manga"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Readarr",
+      "lastScanned": "2022-10-16T00:00:17.3469921",
+      "type": 2,
+      "folders": [
+        "F:\\Syncthing\\Readarr",
+        "F:\\Syncthing\\LibGen"
+      ]
+    }
+  ]

@@ -1,0 +1,39 @@
+{
+    "username": "string",
+    "email": "string",
+    "token": "string",
+    "refreshToken": "string",
+    "apiKey": "string",
+    "preferences": {
+      "readingDirection": 0,
+      "scalingOption": 0,
+      "pageSplitOption": 0,
+      "readerMode": 0,
+      "layoutMode": 1,
+      "backgroundColor": "string",
+      "autoCloseMenu": true,
+      "showScreenHints": true,
+      "bookReaderMargin": 0,
+      "bookReaderLineSpacing": 0,
+      "bookReaderFontSize": 0,
+      "bookReaderFontFamily": "string",
+      "bookReaderTapToPaginate": true,
+      "bookReaderReadingDirection": 0,
+      "theme": {
+        "id": 0,
+        "name": "string",
+        "normalizedName": "string",
+        "fileName": "string",
+        "isDefault": true,
+        "provider": 1,
+        "created": "2022-10-11T11:02:38.897Z",
+        "lastModified": "2022-10-11T11:02:38.897Z"
+      },
+      "bookReaderThemeName": "string",
+      "bookReaderLayoutMode": 0,
+      "bookReaderImmersiveMode": true,
+      "globalPageLayoutMode": 0,
+      "blurUnreadSummaries": true,
+      "promptForDownloadSize": true
+    }
+  }
