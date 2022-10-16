@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:kapi/data/kavita/api/library_service.dart';
-import 'package:kapi/data/kavita/models/kavitaUser.dart';
+import 'package:kapi/data/kavita/api/series_service.dart';
+// import 'package:kapi/data/kavita/models/kavitaUser.dart';
 import 'package:kapi/data/models/server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/login_dto/login_dto.dart';
@@ -12,6 +13,7 @@ class ApiClient {
   static ApiClient? _apiClient;
   late AccountService accountService;
   late LibraryService libraryService;
+  late SeriesService seriesService;
   late Dio dio;
 
   ApiClient._();
@@ -44,37 +46,38 @@ class ApiClient {
 
     _apiClient!.accountService = AccountService(_apiClient!.dio);
     _apiClient!.libraryService = LibraryService(_apiClient!.dio);
+    _apiClient!.seriesService = SeriesService(_apiClient!.dio);
   }
 }
 
-  // baseUrl = environment.apiUrl;
-  // userKey = 'kavita-user';
-  // public lastLoginKey = 'kavita-lastlogin';
-  // currentUser: User | undefined;
+// baseUrl = environment.apiUrl;
+// userKey = 'kavita-user';
+// public lastLoginKey = 'kavita-lastlogin';
+// currentUser: User | undefined;
 
-  //   setCurrentUser(user?: User) {
-  //   if (user) {
-  //     user.roles = [];
-  //     const roles = this.getDecodedToken(user.token).role;
-  //     Array.isArray(roles) ? user.roles = roles : user.roles.push(roles);
+//   setCurrentUser(user?: User) {
+//   if (user) {
+//     user.roles = [];
+//     const roles = this.getDecodedToken(user.token).role;
+//     Array.isArray(roles) ? user.roles = roles : user.roles.push(roles);
 
-  //     localStorage.setItem(this.userKey, JSON.stringify(user));
-  //     localStorage.setItem(this.lastLoginKey, user.username);
-  //     if (user.preferences && user.preferences.theme) {
-  //       this.themeService.setTheme(user.preferences.theme.name);
-  //     } else {
-  //       this.themeService.setTheme(this.themeService.defaultTheme);
-  //     }
-  //   } else {
-  //     this.themeService.setTheme(this.themeService.defaultTheme);
-  //   }
+//     localStorage.setItem(this.userKey, JSON.stringify(user));
+//     localStorage.setItem(this.lastLoginKey, user.username);
+//     if (user.preferences && user.preferences.theme) {
+//       this.themeService.setTheme(user.preferences.theme.name);
+//     } else {
+//       this.themeService.setTheme(this.themeService.defaultTheme);
+//     }
+//   } else {
+//     this.themeService.setTheme(this.themeService.defaultTheme);
+//   }
 
-  //   this.currentUser = user;
-  //   this.currentUserSource.next(user);
-    
-  //   if (this.currentUser !== undefined) {
-  //     this.startRefreshTokenTimer();
-  //   } else {
-  //     this.stopRefreshTokenTimer();
-  //   }
-  // }
+//   this.currentUser = user;
+//   this.currentUserSource.next(user);
+
+//   if (this.currentUser !== undefined) {
+//     this.startRefreshTokenTimer();
+//   } else {
+//     this.stopRefreshTokenTimer();
+//   }
+// }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kapi/data/kavita/models/libraryDto.dart';
 import 'package:kapi/logic/cubit/library_cubit.dart';
+import 'package:kapi/screens/series_screen.dart';
 
 import '../data/kavita/models/library.dart';
 
@@ -28,7 +29,12 @@ class MySearchScreen extends StatelessWidget {
                     final LibraryDto library = state.libraryNames[index];
 
                     return ListTile(
-                      onTap: () => print(library.lastScanned),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) =>
+                                MySeriesScreen(libraryId: library.id!))));
+                        // print(library.id);
+                      },
                       // leading: FaIcon(FontAwesomeIcons.bookOpen),
                       leading: FaIcon(getLibraryTypeIcon(
                           format: LibraryType.values[library.type!])),

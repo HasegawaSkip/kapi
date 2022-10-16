@@ -24,7 +24,6 @@ class SettingsScreen extends StatelessWidget {
                   // Navigator.of(context).push(MaterialPageRoute(
                   //     builder: ((context) => MySearchScreen())));
                   ScaffoldMessenger.of(context).hideCurrentSnackBar();
-
                   ScaffoldMessenger.of(context)
                       .showSnackBar(const SnackBar(content: Text('Loaded')));
                 }

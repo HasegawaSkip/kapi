@@ -18,17 +18,17 @@ class LibraryRepository {
   }
 }
 
-  // getLibraryNames() {
-  //   if (this.libraryNames != undefined) {
-  //     return of(this.libraryNames);
-  //   }
-  //   return this.httpClient.get<Library[]>(this.baseUrl + 'library').pipe(map(l => {
-  //     this.libraryNames = {};
-  //     l.forEach(lib => {
-  //       if (this.libraryNames !== undefined) {
-  //         this.libraryNames[lib.id] = lib.name;
-  //       }        
-  //     });
-  //     return this.libraryNames;
-  //   }));
-  // }
+// getLibraryNames() {
+//   if (this.libraryNames != undefined) {
+//     return of(this.libraryNames);
+//   }
+//   return this.httpClient.get<Library[]>(this.baseUrl + 'library').pipe(map(l => {
+//     this.libraryNames = {};
+//     l.forEach(lib => {
+//       if (this.libraryNames !== undefined) {
+//         this.libraryNames[lib.id] = lib.name;
+//       }
+//     });
+//     return this.libraryNames;
+//   }));
+// }
