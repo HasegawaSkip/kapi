@@ -19,13 +19,13 @@ class _LibraryService implements LibraryService {
   String? baseUrl;
 
   @override
-  Future<LibraryDto> getLibraryNames() async {
+  Future<List<LibraryDto>> getLibraryNames() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LibraryDto>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<LibraryDto>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -37,7 +37,9 @@ class _LibraryService implements LibraryService {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = LibraryDto.fromJson(_result.data!);
+    var value = _result.data!
+        .map((dynamic i) => LibraryDto.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

@@ -10,5 +10,5 @@ abstract class LibraryService {
   factory LibraryService(Dio dio, {String baseUrl}) = _LibraryService;
 
   @GET("/api/Library")
-  Future<LibraryDto> getLibraryNames();
+  Future<List<LibraryDto>> getLibraryNames();
 }

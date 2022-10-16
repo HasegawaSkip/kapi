@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kapi/data/kavita/repositories/account_repository.dart';
 // import 'package:kapi/logic/cubit/server_cubit.dart';
 import 'package:kapi/logic/cubit/server_cubit.dart';
 import 'package:kapi/screens/search_screen.dart';
@@ -22,8 +21,12 @@ class SettingsScreen extends StatelessWidget {
                   // bloc: serverCubit,
                   listener: (context, state) {
                 if (state is ServerReady) {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: ((context) => MySearchScreen())));
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: ((context) => MySearchScreen())));
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(const SnackBar(content: Text('Loaded')));
                 }
               }, builder: (context, state) {
                 if (state is ServersFetched) {

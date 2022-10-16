@@ -7,15 +7,28 @@ import '../api/api_client.dart';
 class LibraryRepository {
   ApiClient apiClient = ApiClient();
 
-  final String userKey = 'kavita-user';
-  final String lastLoginKey = 'kavita-lastlogin';
-  //final Map<String, dynamic> loginData;
-  // {
-  //   "username": "YOUR_USERNAME",
-  //   "password": "YOUR_PASSWORD"
-  // };
-
   LibraryRepository();
+//  private libraryNames: {[key:number]: string} | undefined = undefined;
+//   private libraryTypes: {[key: number]: LibraryType} | undefined = undefined;
 
-  Future<LibraryDto> getLibraryNames() {}
+  // var libraryNames = <String, dynamic>{};
+
+  Future<List<LibraryDto>> getLibraryNames() async {
+    return await apiClient.libraryService.getLibraryNames();
+  }
 }
+
+  // getLibraryNames() {
+  //   if (this.libraryNames != undefined) {
+  //     return of(this.libraryNames);
+  //   }
+  //   return this.httpClient.get<Library[]>(this.baseUrl + 'library').pipe(map(l => {
+  //     this.libraryNames = {};
+  //     l.forEach(lib => {
+  //       if (this.libraryNames !== undefined) {
+  //         this.libraryNames[lib.id] = lib.name;
+  //       }        
+  //     });
+  //     return this.libraryNames;
+  //   }));
+  // }
