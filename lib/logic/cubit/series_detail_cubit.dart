@@ -1,18 +1,18 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:kapi/data/kavita/models/series.dart';
+import 'package:kapi/data/kavita/models/series_detail.dart';
 import 'package:kapi/data/kavita/repositories/series_repository.dart';
 
-part 'series_state.dart';
+part 'series_detail_state.dart';
 
-class SeriesCubit extends Cubit<SeriesState> {
+class SeriesDetailCubit extends Cubit<SeriesDetailState> {
   final SeriesRepository _repository = SeriesRepository();
-  SeriesCubit() : super(SeriesInitial());
+  SeriesDetailCubit() : super(SeriesDetailInitial());
 
-  Future<void> getSeriesForLibrary(int libraryId) async {
-    emit(SeriesLoading());
-    List<Series> seriesList = await _repository.getSeriesForLibrary(libraryId);
-    emit(SeriesLoaded(seriesList));
+  Future<void> getDetail(int seriesId) async {
+    emit(SeriesDetailLoading());
+    SeriesDetail seriesDetail = await _repository.getSeriesDetail(seriesId);
+    emit(SeriesDetailLoaded(seriesDetail));
   }
 }
 

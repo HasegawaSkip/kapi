@@ -61,7 +61,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series?libraryId=${libraryId}&PageSize=10',
+              '/api/Series?libraryId=${libraryId}&PageSize=20',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -69,6 +69,52 @@ class _SeriesService implements SeriesService {
     var value = _result.data!
         .map((dynamic i) => Series.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<SeriesMetadata> getMetadata(seriesId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SeriesMetadata>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/metadata?seriesId=${seriesId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = SeriesMetadata.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<SeriesDetail> getSeriesDetail(seriesId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SeriesDetail>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/series-detail?seriesId=${seriesId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = SeriesDetail.fromJson(_result.data!);
     return value;
   }
 

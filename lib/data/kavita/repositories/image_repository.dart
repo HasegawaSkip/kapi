@@ -4,12 +4,12 @@ import 'package:kapi/data/kavita/models/series.dart';
 
 import '../api/api_client.dart';
 
-class SeriesRepository {
+class ImageRepository {
   ApiClient apiClient = ApiClient();
 
-  SeriesRepository();
+  ImageRepository();
 
-  Future<List<Series>> getSeriesForLibrary(int libraryId) async {
-    return await apiClient.seriesService.getSeriesForLibrary(libraryId, {});
+  Future getSeriesCoverImage(int seriesId) async {
+    return await apiClient.imageService.getSeriesCoverImage(seriesId);
   }
 }

@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Kapi',
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
     );
   }
 }

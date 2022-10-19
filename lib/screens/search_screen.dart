@@ -30,7 +30,7 @@ class MySearchScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: ((context) =>
-                              MySeriesListScreen(libraryId: library.id!))));
+                              MySeriesListScreen(library: library))));
                       // print(library.id);
                     },
                     // leading: FaIcon(FontAwesomeIcons.bookOpen),

@@ -48,7 +48,10 @@ class SettingsScreen extends StatelessWidget {
                                   title: Text(server.name),
                                   subtitle: Text(server.url),
                                   trailing: IconButton(
-                                      icon: const Icon(Icons.delete),
+                                      icon: const Icon(
+                                        Icons.delete,
+                                        color: Colors.black,
+                                      ),
                                       onPressed: () =>
                                           BlocProvider.of<ServerCubit>(context)
                                               .removeServer(server.key)),

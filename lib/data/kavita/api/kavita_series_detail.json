@@ -1,0 +1,1177 @@
+{
+    "specials": [],
+    "chapters": [],
+    "volumes": [
+      {
+        "id": 2186,
+        "number": 1,
+        "name": "Volume 1",
+        "pages": 197,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3304516",
+        "created": "2022-09-03T01:20:36.8534815",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2186,
+            "range": "0",
+            "number": "0",
+            "pages": 197,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2193,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第01巻.rar",
+                "pages": 197,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8535284"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2186,
+            "created": "2022-09-03T01:20:36.8535097",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 1",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2187,
+        "number": 2,
+        "name": "Volume 2",
+        "pages": 199,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3305441",
+        "created": "2022-09-03T01:20:36.8535449",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2187,
+            "range": "0",
+            "number": "0",
+            "pages": 199,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2194,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第02巻.rar",
+                "pages": 199,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8535722"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2187,
+            "created": "2022-09-03T01:20:36.8535609",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 2",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2188,
+        "number": 3,
+        "name": "Volume 3",
+        "pages": 207,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3306162",
+        "created": "2022-09-03T01:20:36.8535885",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2188,
+            "range": "0",
+            "number": "0",
+            "pages": 207,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2195,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第03巻.rar",
+                "pages": 207,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8536163"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2188,
+            "created": "2022-09-03T01:20:36.8536052",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 3",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2189,
+        "number": 4,
+        "name": "Volume 4",
+        "pages": 199,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3306867",
+        "created": "2022-09-03T01:20:36.8536322",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2189,
+            "range": "0",
+            "number": "0",
+            "pages": 199,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2196,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第04巻.rar",
+                "pages": 199,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8536583"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2189,
+            "created": "2022-09-03T01:20:36.8536472",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 4",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2190,
+        "number": 5,
+        "name": "Volume 5",
+        "pages": 201,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3307576",
+        "created": "2022-09-03T01:20:36.853674",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2190,
+            "range": "0",
+            "number": "0",
+            "pages": 201,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2197,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第05巻.rar",
+                "pages": 201,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8536999"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2190,
+            "created": "2022-09-03T01:20:36.8536885",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 5",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2191,
+        "number": 6,
+        "name": "Volume 6",
+        "pages": 198,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3308285",
+        "created": "2022-09-03T01:20:36.8537155",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2191,
+            "range": "0",
+            "number": "0",
+            "pages": 198,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2198,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第06巻.rar",
+                "pages": 198,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8537411"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2191,
+            "created": "2022-09-03T01:20:36.8537297",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 6",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2192,
+        "number": 7,
+        "name": "Volume 7",
+        "pages": 201,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3308983",
+        "created": "2022-09-03T01:20:36.8537567",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2192,
+            "range": "0",
+            "number": "0",
+            "pages": 201,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2199,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第07巻.rar",
+                "pages": 201,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8537829"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2192,
+            "created": "2022-09-03T01:20:36.8537715",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 7",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2193,
+        "number": 8,
+        "name": "Volume 8",
+        "pages": 198,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3309688",
+        "created": "2022-09-03T01:20:36.8537982",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2193,
+            "range": "0",
+            "number": "0",
+            "pages": 198,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2200,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第08巻.rar",
+                "pages": 198,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8538237"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2193,
+            "created": "2022-09-03T01:20:36.8538129",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 8",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2194,
+        "number": 9,
+        "name": "Volume 9",
+        "pages": 200,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.331039",
+        "created": "2022-09-03T01:20:36.853839",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2194,
+            "range": "0",
+            "number": "0",
+            "pages": 200,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2201,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第09巻.rar",
+                "pages": 200,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8538648"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2194,
+            "created": "2022-09-03T01:20:36.8538538",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 9",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2195,
+        "number": 10,
+        "name": "Volume 10",
+        "pages": 198,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3311121",
+        "created": "2022-09-03T01:20:36.85388",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2195,
+            "range": "0",
+            "number": "0",
+            "pages": 198,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2202,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第10巻.rar",
+                "pages": 198,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8539058"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2195,
+            "created": "2022-09-03T01:20:36.8538947",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 10",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2196,
+        "number": 11,
+        "name": "Volume 11",
+        "pages": 200,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3311834",
+        "created": "2022-09-03T01:20:36.8539209",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2196,
+            "range": "0",
+            "number": "0",
+            "pages": 200,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2203,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第11巻.rar",
+                "pages": 200,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8539464"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2196,
+            "created": "2022-09-03T01:20:36.8539352",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 11",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2197,
+        "number": 12,
+        "name": "Volume 12",
+        "pages": 206,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3312535",
+        "created": "2022-09-03T01:20:36.8539616",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2197,
+            "range": "0",
+            "number": "0",
+            "pages": 206,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2204,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第12巻.rar",
+                "pages": 206,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8539873"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2197,
+            "created": "2022-09-03T01:20:36.8539759",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 12",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2198,
+        "number": 13,
+        "name": "Volume 13",
+        "pages": 199,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3313251",
+        "created": "2022-09-03T01:20:36.8540022",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2198,
+            "range": "0",
+            "number": "0",
+            "pages": 199,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2205,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第13巻.rar",
+                "pages": 199,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8540275"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2198,
+            "created": "2022-09-03T01:20:36.8540169",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 13",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2199,
+        "number": 14,
+        "name": "Volume 14",
+        "pages": 198,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3313954",
+        "created": "2022-09-03T01:20:36.8540431",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2199,
+            "range": "0",
+            "number": "0",
+            "pages": 198,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2206,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第14巻.rar",
+                "pages": 198,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8540688"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2199,
+            "created": "2022-09-03T01:20:36.8540579",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 14",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2200,
+        "number": 15,
+        "name": "Volume 15",
+        "pages": 206,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3314649",
+        "created": "2022-09-03T01:20:36.8540839",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2200,
+            "range": "0",
+            "number": "0",
+            "pages": 206,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2207,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第15巻.rar",
+                "pages": 206,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8541095"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2200,
+            "created": "2022-09-03T01:20:36.8540987",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 15",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2201,
+        "number": 16,
+        "name": "Volume 16",
+        "pages": 200,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3315348",
+        "created": "2022-09-03T01:20:36.8541248",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2201,
+            "range": "0",
+            "number": "0",
+            "pages": 200,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2208,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第16巻.rar",
+                "pages": 200,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8541505"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2201,
+            "created": "2022-09-03T01:20:36.8541392",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 16",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2202,
+        "number": 17,
+        "name": "Volume 17",
+        "pages": 200,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3316053",
+        "created": "2022-09-03T01:20:36.854166",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2202,
+            "range": "0",
+            "number": "0",
+            "pages": 200,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2209,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第17巻.rar",
+                "pages": 200,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8541916"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2202,
+            "created": "2022-09-03T01:20:36.8541803",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 17",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2203,
+        "number": 18,
+        "name": "Volume 18",
+        "pages": 200,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3316747",
+        "created": "2022-09-03T01:20:36.8542068",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2203,
+            "range": "0",
+            "number": "0",
+            "pages": 200,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2210,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第18巻.rar",
+                "pages": 200,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8542325"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2203,
+            "created": "2022-09-03T01:20:36.8542215",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 18",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2204,
+        "number": 19,
+        "name": "Volume 19",
+        "pages": 204,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3317443",
+        "created": "2022-09-03T01:20:36.8542473",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2204,
+            "range": "0",
+            "number": "0",
+            "pages": 204,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2211,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第19巻.rar",
+                "pages": 204,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8542728"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2204,
+            "created": "2022-09-03T01:20:36.8542621",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 19",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2205,
+        "number": 20,
+        "name": "Volume 20",
+        "pages": 204,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3318145",
+        "created": "2022-09-03T01:20:36.8542883",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2205,
+            "range": "0",
+            "number": "0",
+            "pages": 204,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2212,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第20巻.rar",
+                "pages": 204,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8543137"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2205,
+            "created": "2022-09-03T01:20:36.8543031",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 20",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2206,
+        "number": 21,
+        "name": "Volume 21",
+        "pages": 204,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.331884",
+        "created": "2022-09-03T01:20:36.854329",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2206,
+            "range": "0",
+            "number": "0",
+            "pages": 204,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2213,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第21巻.rar",
+                "pages": 204,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8543545"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2206,
+            "created": "2022-09-03T01:20:36.8543432",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 21",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2207,
+        "number": 22,
+        "name": "Volume 22",
+        "pages": 204,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3319536",
+        "created": "2022-09-03T01:20:36.8543702",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2207,
+            "range": "0",
+            "number": "0",
+            "pages": 204,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2214,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第22巻.rar",
+                "pages": 204,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8543955"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2207,
+            "created": "2022-09-03T01:20:36.8543843",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 22",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2208,
+        "number": 23,
+        "name": "Volume 23",
+        "pages": 101,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3320238",
+        "created": "2022-09-03T01:20:36.8544102",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2208,
+            "range": "0",
+            "number": "0",
+            "pages": 101,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2215,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第23巻.rar",
+                "pages": 101,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.854436"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2208,
+            "created": "2022-09-03T01:20:36.8544248",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 23",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2209,
+        "number": 24,
+        "name": "Volume 24",
+        "pages": 105,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3320981",
+        "created": "2022-09-03T01:20:36.8544507",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2209,
+            "range": "0",
+            "number": "0",
+            "pages": 105,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2216,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第24巻.rar",
+                "pages": 105,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8544762"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2209,
+            "created": "2022-09-03T01:20:36.8544656",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 24",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2210,
+        "number": 25,
+        "name": "Volume 25",
+        "pages": 101,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3321691",
+        "created": "2022-09-03T01:20:36.8544916",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2210,
+            "range": "0",
+            "number": "0",
+            "pages": 101,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2217,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第25巻.rar",
+                "pages": 101,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8545171"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2210,
+            "created": "2022-09-03T01:20:36.8545064",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 25",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      },
+      {
+        "id": 2211,
+        "number": 26,
+        "name": "Volume 26",
+        "pages": 106,
+        "pagesRead": 0,
+        "lastModified": "2022-09-03T01:20:46.3322388",
+        "created": "2022-09-03T01:20:36.8545323",
+        "seriesId": 103,
+        "chapters": [
+          {
+            "id": 2211,
+            "range": "0",
+            "number": "0",
+            "pages": 106,
+            "isSpecial": false,
+            "title": "Chapter 0",
+            "files": [
+              {
+                "id": 2218,
+                "filePath": "F:\\Manga\\[稲垣理一郎] Dr.STONE [全01-26巻] (Dr. STONE)\\Dr.STONE 第26巻.rar",
+                "pages": 106,
+                "format": 1,
+                "created": "2022-09-03T01:20:36.8545578"
+              }
+            ],
+            "pagesRead": 0,
+            "coverImageLocked": false,
+            "volumeId": 2211,
+            "created": "2022-09-03T01:20:36.8545466",
+            "releaseDate": "0001-01-01T00:00:00",
+            "titleName": "",
+            "summary": null,
+            "ageRating": 0,
+            "wordCount": 0,
+            "volumeTitle": "Volume 26",
+            "minHoursToRead": 1,
+            "maxHoursToRead": 1,
+            "avgHoursToRead": 1
+          }
+        ],
+        "minHoursToRead": 1,
+        "maxHoursToRead": 1,
+        "avgHoursToRead": 1
+      }
+    ],
+    "storylineChapters": []
+  }
