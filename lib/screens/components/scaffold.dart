@@ -13,6 +13,13 @@ class MyScaffold extends StatefulWidget {
 
 class _MyScaffoldState extends State<MyScaffold> {
   int _selectedIndex = 0;
+  // final _pageViewController = PageController();
+
+  // @override
+  // void dispose() {
+  //   _pageViewController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +28,12 @@ class _MyScaffoldState extends State<MyScaffold> {
       "password": "YOUR_PASSWORD"
     };
 
-    final _pageViewController = PageController();
     void _onItemTapped(int index) {
-      _pageViewController.animateToPage(index,
-          duration: Duration(microseconds: 200), curve: Curves.easeInOut);
-      // setState(() {
-      //   _selectedIndex = index;
-      // });
+      // _pageViewController.animateToPage(index,
+      //     duration: Duration(microseconds: 200), curve: Curves.easeInOut);
+      setState(() {
+        _selectedIndex = index;
+      });
     }
 
     return Scaffold(
@@ -36,17 +42,21 @@ class _MyScaffoldState extends State<MyScaffold> {
       ),
       body:
           // Text('asd'),
-          PageView(
-              controller: _pageViewController,
-              children: [
-                MyBody(loginData: loginData),
-                MySearchScreen(),
-                MyDiscoverScreen(),
-                SettingsScreen()
-              ],
-              onPageChanged: (index) => setState(() {
-                    _selectedIndex = index;
-                  })),
+          // PageView(
+          //     controller: _pageViewController,
+          // physics: NeverScrollableScrollPhysics(),
+          IndexedStack(
+        index: _selectedIndex,
+        children: [
+          MyBody(loginData: loginData),
+          MySearchScreen(),
+          MyDiscoverScreen(),
+          SettingsScreen()
+        ],
+      ),
+      // onPageChanged: (index) => setState(() {
+      //       _selectedIndex = index;
+      //     })),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -71,7 +81,7 @@ class _MyScaffoldState extends State<MyScaffold> {
         backgroundColor: Colors.black,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.white,
-        onTap: (_onItemTapped),
+        onTap: _onItemTapped,
       ),
     );
   }

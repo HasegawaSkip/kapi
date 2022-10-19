@@ -42,6 +42,13 @@ class MyBody extends StatelessWidget {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(children: [
+                        ChoiceChip(label: Text('something'), selected: false),
+                        ChoiceChip(label: Text('something'), selected: false),
+                      ]),
+                    ),
                     Text(state.toString()),
                     ElevatedButton(
                         onPressed: () =>

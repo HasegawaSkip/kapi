@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:kapi/logic/cubit/server_cubit.dart';
 import 'package:kapi/logic/cubit/server_cubit.dart';
-import 'package:kapi/screens/search_screen.dart';
+// import 'package:kapi/screens/search_screen.dart';
 import 'components/kavita_login_modal.dart';
 
 class SettingsScreen extends StatelessWidget {
