@@ -1,0 +1,15 @@
+
+[
+  {
+    "seriesName": "string",
+    "seriesId": 0,
+    "libraryId": 0,
+    "libraryType": 0,
+    "title": "string",
+    "created": "2022-10-20T15:39:24.963Z",
+    "chapterId": 0,
+    "volumeId": 0,
+    "id": 0,
+    "format": 0
+  }
+]

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:kapi/screens/components/scaffold.dart';
 
-void main() {
+import 'data/kavita/api/api_client.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  ApiClient();
+  await ApiClient.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kapi',
-      home: const HomeScreen(),
+      home: const MyScaffold(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blueGrey),
     );

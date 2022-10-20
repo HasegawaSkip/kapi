@@ -6,7 +6,8 @@ part 'image_service.gg.dart';
 @RestApi()
 abstract class ImageService {
   factory ImageService(Dio dio, {String baseUrl}) = _ImageService;
-  @GET("/api/Image/series-cover?seriesId={seriesId}")
-  Future<String> getSeriesCoverImage(@Path("seriesId") int seriesId);
+
+  @GET("/api/Image/series-cover")
+  Future<String> getSeriesCoverImage(@Query("seriesId") int seriesId);
   // return '${_dio.options.baseUrl}/api/Image/series-cover?seriesId=${seriesId}';
 }

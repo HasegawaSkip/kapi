@@ -14,7 +14,7 @@ class LibraryRepository {
   // var libraryNames = <String, dynamic>{};
 
   Future<List<LibraryDto>> getLibraryNames() async {
-    await ApiClient.init();
+    // await ApiClient.init();
     return await apiClient.libraryService.getLibraryNames();
   }
 }

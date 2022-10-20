@@ -48,7 +48,7 @@ class _MyScaffoldState extends State<MyScaffold> {
           IndexedStack(
         index: _selectedIndex,
         children: [
-          MyBody(loginData: loginData),
+          MyHomeScreen(),
           MySearchScreen(),
           MyDiscoverScreen(),
           SettingsScreen()

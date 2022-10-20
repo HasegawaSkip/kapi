@@ -5,8 +5,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kapi/data/kavita/models/series/series.dart';
 import 'package:kapi/data/kavita/models/series_detail/volume.dart';
 import 'package:kapi/logic/cubit/series_metadata_cubit.dart';
+import 'package:kapi/screens/reader_screen.dart';
 
 import '../logic/cubit/series_detail_cubit.dart';
+import 'components/section_title.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MySeriesScreen extends StatelessWidget {
   final Series series;
@@ -28,7 +31,11 @@ class MySeriesScreen extends StatelessWidget {
                           child: Text('Mark as Read'), value: 0),
                       PopupMenuItem(child: Text('Rate'), value: 1),
                       PopupMenuItem(child: Text('Refresh'), value: 2),
-                      PopupMenuItem(child: Text('Share'), value: 3),
+                      PopupMenuItem(
+                          onTap: () => launchUrl(
+                              Uri.parse('https://www.goodreads.com/')),
+                          child: Text('Share'),
+                          value: 3),
                       PopupMenuItem(child: Text('Download'), value: 4),
                     ])
           ],
@@ -75,7 +82,7 @@ class SeriesScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle(
+          buildSectionTitle(
             series.name!,
             // style: Theme.of(context).textTheme.titleMedium,
           ),
@@ -100,7 +107,7 @@ class SeriesScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
-          _buildSectionTitle('Description'),
+          buildSectionTitle('Description'),
           const SizedBox(height: 1),
           Padding(
             padding: const EdgeInsets.only(right: 16),
@@ -139,7 +146,12 @@ class SeriesScreen extends StatelessWidget {
                       itemCount: volumes.length,
                       itemBuilder: ((context, index) {
                         return Card(
-                          child: ListTile(title: Text(volumes[index].name!)),
+                          child: ListTile(
+                              onTap: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => MyReaderScreen(
+                                          volume: volumes[index]))),
+                              title: Text(volumes[index].name!)),
                         );
                       })),
                 ),
@@ -150,13 +162,6 @@ class SeriesScreen extends StatelessWidget {
           })),
         ],
       ),
-    );
-  }
-
-  _buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
     );
   }
 }

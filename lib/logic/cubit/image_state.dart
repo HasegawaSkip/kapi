@@ -12,9 +12,11 @@ class ImageInitial extends ImageState {}
 class ImageLoading extends ImageState {}
 
 class ImageLoaded extends ImageState {
-  final image;
-  const ImageLoaded(this.image);
+  final String imageUrl;
+  const ImageLoaded(this.imageUrl);
 
   @override
-  List<Object> get props => [image];
+  List<Object> get props => [imageUrl];
 }
+
+class ImageError extends ImageState {}

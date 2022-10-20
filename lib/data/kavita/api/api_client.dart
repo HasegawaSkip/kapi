@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:kapi/data/kavita/api/image_service.dart';
 import 'package:kapi/data/kavita/api/library_service.dart';
+import 'package:kapi/data/kavita/api/reader_service.dart';
 import 'package:kapi/data/kavita/api/series_service.dart';
 import 'package:kapi/data/kavita/models/login_dto/preferences.dart';
 // import 'package:kapi/data/kavita/models/kavitaUser.dart';
@@ -18,6 +19,8 @@ class ApiClient {
   late LibraryService libraryService;
   late SeriesService seriesService;
   late ImageService imageService;
+  late ReaderService readerService;
+
   late Dio dio;
 
   ApiClient._();
@@ -65,6 +68,7 @@ class ApiClient {
     _apiClient!.libraryService = LibraryService(_apiClient!.dio);
     _apiClient!.seriesService = SeriesService(_apiClient!.dio);
     _apiClient!.imageService = ImageService(_apiClient!.dio);
+    _apiClient!.readerService = ReaderService(_apiClient!.dio);
   }
 }
 

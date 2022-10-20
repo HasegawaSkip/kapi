@@ -21,7 +21,7 @@ class _SeriesService implements SeriesService {
   @override
   Future<List<Series>> getAllSeries(libraryId) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'libraryId': libraryId};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result =
@@ -32,7 +32,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series/all?libraryId=${libraryId}&PageSize=10',
+              '/api/Series/all?PageSize=20',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -49,7 +49,7 @@ class _SeriesService implements SeriesService {
     body,
   ) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'libraryId': libraryId};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body);
@@ -61,7 +61,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series?libraryId=${libraryId}&PageSize=20',
+              '/api/Series?PageSize=20',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -75,7 +75,7 @@ class _SeriesService implements SeriesService {
   @override
   Future<SeriesMetadata> getMetadata(seriesId) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'seriesId': seriesId};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
@@ -86,7 +86,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series/metadata?seriesId=${seriesId}',
+              '/api/Series/metadata',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -98,7 +98,7 @@ class _SeriesService implements SeriesService {
   @override
   Future<SeriesDetail> getSeriesDetail(seriesId) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'seriesId': seriesId};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
@@ -109,12 +109,64 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series/series-detail?seriesId=${seriesId}',
+              '/api/Series/series-detail',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = SeriesDetail.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<RecentlyAddedItemDto>> getRecentlyUpdatedSeries() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<RecentlyAddedItemDto>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/recently-updated-series',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) =>
+            RecentlyAddedItemDto.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
+  Future<List<Series>> getRecentlyAdded(body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<Series>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/recently-added?PageNumber=1&PageSize=30&libraryId=0',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => Series.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

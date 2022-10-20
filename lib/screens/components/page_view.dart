@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kapi/screens/settings_screen.dart';
-import 'package:kapi/screens/home_screen.dart';
+import 'package:kapi/screens/home_screen_legacy.dart';
 
 class MyPageView extends StatefulWidget {
   const MyPageView({super.key});
