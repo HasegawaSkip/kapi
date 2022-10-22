@@ -80,8 +80,7 @@ class SeriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController _scrollController =
-        ScrollController(initialScrollOffset: 50.0, keepScrollOffset: true);
+    ScrollController _scrollController = ScrollController();
     return Padding(
       padding: const EdgeInsets.only(left: 16, top: 16),
       child: Column(
@@ -113,13 +112,51 @@ class SeriesScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
-          const buildSectionTitle('Description'),
+          Row(children: [
+            const buildSectionTitle('Description'),
+            const SizedBox(width: 8),
+            BlocBuilder<SeriesMetadataCubit, SeriesMetadataState>(
+              builder: (context, state) {
+                if (state is SeriesMetadataLoaded) {
+                  if (state.seriesMetadata.summary!.isEmpty) {
+                    return const SizedBox.shrink();
+                  }
+                  return InkWell(
+                      onTap: () => showDialog(
+                            context: context,
+                            builder: (context) => SimpleDialog(
+                                title: const Text('Description'),
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0),
+                                    child: SelectableText(
+                                        state.seriesMetadata.summary!),
+                                  )
+                                ]),
+                          ),
+                      child: const Icon(Icons.fullscreen));
+                } else {
+                  return const SizedBox.shrink();
+                }
+              },
+            )
+          ]),
           // const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: BlocBuilder<SeriesMetadataCubit, SeriesMetadataState>(
               builder: (context, state) {
                 if (state is SeriesMetadataLoaded) {
+                  if (state.seriesMetadata.summary!.isEmpty) {
+                    return SizedBox(
+                        height: MediaQuery.of(context).size.height / 6,
+                        child: const Center(
+                          child: Text(
+                            '<empty>',
+                          ),
+                        ));
+                  }
                   return Scrollbar(
                     controller: _scrollController,
                     thumbVisibility: true,
