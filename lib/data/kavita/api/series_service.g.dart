@@ -119,6 +119,32 @@ class _SeriesService implements SeriesService {
   }
 
   @override
+  Future<List<Series>> getOnDeck(body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<Series>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/on-deck?PageNumber=1&PageSize=30&libraryId=0',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => Series.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<List<RecentlyAddedItemDto>> getRecentlyUpdatedSeries() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -167,6 +193,52 @@ class _SeriesService implements SeriesService {
     var value = _result.data!
         .map((dynamic i) => Series.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<Chapter> getChapter(chapterId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'chapterId': chapterId};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Chapter>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series/chapter',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Chapter.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<Series> getSeries(seriesId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'seriesId': seriesId};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Series>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/Series',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Series.fromJson(_result.data!);
     return value;
   }
 

@@ -7,12 +7,18 @@ part of 'series_detail.dart';
 // **************************************************************************
 
 SeriesDetail _$SeriesDetailFromJson(Map<String, dynamic> json) => SeriesDetail(
-      specials: json['specials'] as List<dynamic>?,
-      chapters: json['chapters'] as List<dynamic>?,
+      specials: (json['specials'] as List<dynamic>?)
+          ?.map((e) => Special.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      chapters: (json['chapters'] as List<dynamic>?)
+          ?.map((e) => Chapter.fromJson(e as Map<String, dynamic>))
+          .toList(),
       volumes: (json['volumes'] as List<dynamic>?)
           ?.map((e) => Volume.fromJson(e as Map<String, dynamic>))
           .toList(),
-      storylineChapters: json['storylineChapters'] as List<dynamic>?,
+      storylineChapters: (json['storylineChapters'] as List<dynamic>?)
+          ?.map((e) => StorylineChapter.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$SeriesDetailToJson(SeriesDetail instance) =>

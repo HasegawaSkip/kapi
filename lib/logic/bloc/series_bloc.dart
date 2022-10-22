@@ -17,22 +17,35 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       // this.libraryId,
       )
       : super(SeriesInitial()) {
-    on<getRecentlyUpdatedSeriesEvent>((event, emit) async {
-      emit(RecentlyUpdatedLoading());
-      try {
-        List<RecentlyAddedItemDto> recentlyAddedItemDto =
-            await _repository.getRecentlyUpdatedSeries();
-        emit(RecentlyUpdatedSeriesLoaded(recentlyAddedItemDto));
-      } on Exception catch (_) {
-        emit(SeriesError());
-      }
-    });
+    // on<getRecentlyUpdatedSeriesEvent>((event, emit) async {
+    //   emit(SeriesLoading());
+    //   try {
+    //     List<RecentlyAddedItemDto> recentlyAddedItemDto =
+    //         await _repository.getRecentlyUpdatedSeries();
+    //     emit(RecentlyUpdatedSeriesLoaded(recentlyAddedItemDto));
+    //   } on Exception catch (_) {
+    //     emit(SeriesError());
+    //   }
+    // });
 
-    on<getNewlyAddedSeriesEvent>((event, emit) async {
-      emit(NewlyAddedLoading());
+    // on<getNewlyAddedSeriesEvent>((event, emit) async {
+    //   emit(SeriesLoading());
+    //   try {
+    //     List<Series> series = await _repository.getRecentlyAdded();
+    //     emit(NewlyAddedSeriesLoaded(series));
+    //   } on Exception catch (_) {
+    //     emit(SeriesError());
+    //   }
+    // });
+
+    on<HomeScreenSeriesEvent>((event, emit) async {
+      emit(SeriesLoading());
       try {
-        List<Series> series = await _repository.getRecentlyAdded();
-        emit(NewlyAddedSeriesLoaded(series));
+        List<Series> onDeck = await _repository.getOnDeck();
+        List<RecentlyAddedItemDto> recentlyUpdated =
+            await _repository.getRecentlyUpdatedSeries();
+        List<Series> newlyAdded = await _repository.getRecentlyAdded();
+        emit(HomeScreenSeriesLoaded(onDeck, recentlyUpdated, newlyAdded));
       } on Exception catch (_) {
         emit(SeriesError());
       }

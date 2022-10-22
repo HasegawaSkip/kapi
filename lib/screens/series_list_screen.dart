@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kapi/logic/cubit/image_cubit.dart';
 import 'package:kapi/logic/cubit/series_cubit.dart';
 import 'components/series_card.dart';
-import 'package:kapi/screens/series_screen.dart';
+import 'package:kapi/screens/series_detail_screen.dart';
 import 'package:kapi/data/kavita/models/libraryDto.dart';
 
 import '../data/kavita/models/series.dart';
@@ -88,7 +88,6 @@ class SeriesListScreen extends StatelessWidget {
     );
   }
 }
-
 
 // Card(
 //                     elevation: 4.0,

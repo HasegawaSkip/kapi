@@ -9,9 +9,7 @@ abstract class SeriesState extends Equatable {
 
 class SeriesInitial extends SeriesState {}
 
-class NewlyAddedLoading extends SeriesState {}
-
-class RecentlyUpdatedLoading extends SeriesState {}
+class SeriesLoading extends SeriesState {}
 
 class RecentlyUpdatedSeriesLoaded extends SeriesState {
   final List<RecentlyAddedItemDto> recentlyAddedItemDto;
@@ -33,6 +31,21 @@ class NewlyAddedSeriesLoaded extends SeriesState {
 
   @override
   List<Object> get props => [series];
+}
+
+class HomeScreenSeriesLoaded extends SeriesState {
+  final List<Series> onDeck;
+  final List<RecentlyAddedItemDto> recentlyUpdated;
+  final List<Series> newlyAdded;
+
+  const HomeScreenSeriesLoaded(
+    this.onDeck,
+    this.recentlyUpdated,
+    this.newlyAdded,
+  );
+
+  @override
+  List<Object> get props => [onDeck, recentlyUpdated, newlyAdded];
 }
 
 class SeriesError extends SeriesState {}

@@ -10,6 +10,8 @@ class ImageRepository {
   ImageRepository();
 
   Future getSeriesCoverImage(int seriesId) async {
-    return await apiClient.imageService.getSeriesCoverImage(seriesId);
+    String imageUrl =
+        await apiClient.imageService.getSeriesCoverImage(seriesId);
+    return imageUrl;
   }
 }

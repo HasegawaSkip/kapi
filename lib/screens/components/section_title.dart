@@ -7,19 +7,16 @@ class buildSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
-            child: Text(
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              title,
-              style:
-                  const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-            ),
+          Text(
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            title,
+            style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
         ],
       ),

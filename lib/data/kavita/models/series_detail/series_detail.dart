@@ -1,16 +1,19 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'chapter.dart';
+import 'special.dart';
+import 'storyline_chapter.dart';
 import 'volume.dart';
 
 part 'series_detail.g.dart';
 
 @JsonSerializable()
 class SeriesDetail extends Equatable {
-  final List<dynamic>? specials;
-  final List<dynamic>? chapters;
+  final List<Special>? specials;
+  final List<Chapter>? chapters;
   final List<Volume>? volumes;
-  final List<dynamic>? storylineChapters;
+  final List<StorylineChapter>? storylineChapters;
 
   const SeriesDetail({
     this.specials,

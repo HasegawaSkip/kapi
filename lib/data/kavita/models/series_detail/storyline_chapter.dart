@@ -3,10 +3,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'file.dart';
 
-part 'chapter.g.dart';
+part 'storyline_chapter.g.dart';
 
 @JsonSerializable()
-class Chapter extends Equatable {
+class StorylineChapter extends Equatable {
   final int? id;
   final String? range;
   final String? number;
@@ -28,7 +28,7 @@ class Chapter extends Equatable {
   final int? maxHoursToRead;
   final int? avgHoursToRead;
 
-  const Chapter({
+  const StorylineChapter({
     this.id,
     this.range,
     this.number,
@@ -51,11 +51,11 @@ class Chapter extends Equatable {
     this.avgHoursToRead,
   });
 
-  factory Chapter.fromJson(Map<String, dynamic> json) {
-    return _$ChapterFromJson(json);
+  factory StorylineChapter.fromJson(Map<String, dynamic> json) {
+    return _$StorylineChapterFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$ChapterToJson(this);
+  Map<String, dynamic> toJson() => _$StorylineChapterToJson(this);
 
   @override
   List<Object?> get props {

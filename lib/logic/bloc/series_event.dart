@@ -10,3 +10,5 @@ abstract class SeriesEvent extends Equatable {
 class getRecentlyUpdatedSeriesEvent extends SeriesEvent {}
 
 class getNewlyAddedSeriesEvent extends SeriesEvent {}
+
+class HomeScreenSeriesEvent extends SeriesEvent {}

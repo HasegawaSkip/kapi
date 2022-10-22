@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'chapter.dart';
+part of 'special.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Chapter _$ChapterFromJson(Map<String, dynamic> json) => Chapter(
+Special _$SpecialFromJson(Map<String, dynamic> json) => Special(
       id: json['id'] as int?,
       range: json['range'] as String?,
       number: json['number'] as String?,
@@ -35,7 +35,7 @@ Chapter _$ChapterFromJson(Map<String, dynamic> json) => Chapter(
       avgHoursToRead: json['avgHoursToRead'] as int?,
     );
 
-Map<String, dynamic> _$ChapterToJson(Chapter instance) => <String, dynamic>{
+Map<String, dynamic> _$SpecialToJson(Special instance) => <String, dynamic>{
       'id': instance.id,
       'range': instance.range,
       'number': instance.number,
