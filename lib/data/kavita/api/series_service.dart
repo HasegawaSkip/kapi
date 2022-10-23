@@ -12,10 +12,10 @@ part 'series_service.g.dart';
 abstract class SeriesService {
   factory SeriesService(Dio dio, {String baseUrl}) = _SeriesService;
 
-  @POST("/api/Series/all?PageSize=20")
+  @POST("/api/Series/all") //?PageSize=20
   Future<List<Series>> getAllSeries(@Query("libraryId") int libraryId);
 
-  @POST("/api/Series?PageSize=20")
+  @POST("/api/Series") //?PageSize=20
   // @POST("/api/Series?libraryId={libraryId}")
   Future<List<Series>> getSeriesForLibrary(
       @Query("libraryId") int libraryId, @Body() Map<String, dynamic> body);

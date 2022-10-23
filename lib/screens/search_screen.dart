@@ -14,6 +14,20 @@ class MySearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LibraryCubit()..getLibraryNames(),
+      child: _buildSearchScreen(),
+    );
+  }
+}
+
+class _buildSearchScreen extends StatelessWidget {
+  const _buildSearchScreen({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RefreshIndicator(
+      onRefresh: () => context.read<LibraryCubit>().getLibraryNames(),
       child: BlocBuilder<LibraryCubit, LibraryState>(
         builder: (context, state) {
           if (state is LibraryInfoLoaded) {
@@ -41,7 +55,7 @@ class MySearchScreen extends StatelessWidget {
                 });
           }
           if (state is LibraryLoading) {
-            return Center(child: Text(state.toString()));
+            return const Center(child: LinearProgressIndicator());
             // return const Center(child: CircularProgressIndicator());
           } else {
             return Padding(

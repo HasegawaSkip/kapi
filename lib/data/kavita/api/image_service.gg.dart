@@ -23,6 +23,16 @@ class _ImageService implements ImageService {
     return '${_dio.options.baseUrl}/api/Image/series-cover?seriesId=${seriesId}';
   }
 
+  @override
+  Future<String> getVolumeCoverImage(volumeId) async {
+    return '${_dio.options.baseUrl}/api/Image/volume-cover?volumeId=${volumeId}';
+  }
+
+  @override
+  Future<String> getChapterCoverImage(chapterId) async {
+    return '${_dio.options.baseUrl}/api/Image/chapter-cover?chapterId=${chapterId}';
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

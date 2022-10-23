@@ -35,22 +35,28 @@ class ServerRepository {
     // return serverJsons.map((e) => Server.fromJson(e)).toList();
   }
 
-  Future addServer(Server server) async {
+  Future<bool> addServer(Server server) async {
     final prefs = await SharedPreferences.getInstance();
     String serverString = jsonEncode(server.toJson());
 
     return await prefs.setString(server.key, serverString);
   }
 
-  Future removeServer(String key) async {
+  Future<bool> removeServer(String key) async {
     final prefs = await SharedPreferences.getInstance();
     return await prefs.remove(key);
   }
 
-  Future setCurrentServer(Server server) async {
+  Future<void> setCurrentServer(Server server) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('Current Server');
     await prefs.setString('Current Server', jsonEncode(server));
     ApiClient.init();
+  }
+
+  Future<String?> getCurrentServer() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? currentServer = prefs.getString('Current Server');
+    return currentServer;
   }
 }

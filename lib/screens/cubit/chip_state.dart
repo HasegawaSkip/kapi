@@ -1,21 +1,21 @@
-part of 'chip_cubit.dart';
+// part of 'chip_cubit.dart';
 
-abstract class ChipState extends Equatable {
-  const ChipState();
+// abstract class ChipState extends Equatable {
+//   const ChipState();
 
-  @override
-  List<Object> get props => [];
-}
+//   @override
+//   List<Object> get props => [];
+// }
 
-class ChipInitial extends ChipState {}
+// class ChipInitial extends ChipState {}
 
-class ChipSelected extends ChipState {
-  int index;
+// class ChipSelected extends ChipState {
+//   int index;
 
-  ChipSelected(
-    this.index,
-  );
+//   ChipSelected(
+//     this.index,
+//   );
 
-  @override
-  List<Object> get props => [index];
-}
+//   @override
+//   List<Object> get props => [index];
+// }

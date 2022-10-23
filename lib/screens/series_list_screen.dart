@@ -51,7 +51,7 @@ class SeriesListScreen extends StatelessWidget {
                     itemCount: state.seriesList.length,
                     itemBuilder: ((context, index) {
                       final Series series = state.seriesList[index];
-                      return InkWell(
+                      return GestureDetector(
                         onTap: (() => Navigator.of(context).push(
                             MaterialPageRoute(
                                 builder: (context) =>

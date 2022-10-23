@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kapi/data/kavita/repositories/account_repository.dart';
-import 'package:kapi/data/repositories/server_repository.dart';
+// import 'package:kapi/data/kavita/repositories/account_repository.dart';
+// import 'package:kapi/data/repositories/server_repository.dart';
 import 'package:kapi/logic/cubit/server_cubit.dart';
 
 import '../../logic/bloc/login_bloc.dart';
@@ -11,15 +11,8 @@ class KavitaLoginModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider(
-          create: (context) => AccountRepository(),
-        ),
-        RepositoryProvider(
-          create: (context) => ServerRepository(),
-        ),
-      ],
+    return BlocProvider(
+      create: (context) => ServerCubit(),
       child: Scaffold(
         // resizeToAvoidBottomInset: false,
         // appBar: AppBar(
@@ -42,8 +35,6 @@ class LoginModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LoginBloc loginBloc = LoginBloc(context.read<AccountRepository>());
-    final ServerCubit serverCubit = ServerCubit();
     final nameController = TextEditingController();
     final urlController = TextEditingController();
     final usernameController = TextEditingController();
@@ -169,7 +160,7 @@ class LoginModal extends StatelessWidget {
                     //   "username": usernameController.text,
                     //   "password": passwordController.text
                     // }));
-                    serverCubit.addServer(
+                    context.read<ServerCubit>().addServer(
                         serverName: nameController.text,
                         url: urlController.text,
                         username: usernameController.text,

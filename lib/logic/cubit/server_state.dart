@@ -25,3 +25,12 @@ class ServersFailed extends ServerState {}
 class ServerReady extends ServerState {}
 
 class ServerAddNewFailed extends ServerState {}
+
+class CurrentServerFetched extends ServerState {
+  final Server server;
+
+  const CurrentServerFetched(this.server);
+
+  @override
+  List<Object> get props => [server];
+}

@@ -9,41 +9,49 @@ class SeriesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width / 3.5;
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Container(
+        width: width,
+        height: width * 1.6,
         decoration: BoxDecoration(
           image: DecorationImage(image: coverImage, fit: BoxFit.cover),
         ),
         child: FractionallySizedBox(
             alignment: Alignment.bottomCenter,
             heightFactor: 0.20,
-            child: Container(
-                padding: const EdgeInsets.only(left: 8),
-                decoration: const BoxDecoration(color: Colors.black54),
-                alignment: Alignment.center,
-                child: Row(
-                  // mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          title,
-                          style: const TextStyle(color: Colors.white)),
-                    ),
-                    GestureDetector(
-                      onTapDown: (details) =>
-                          _showMenu(context, details.globalPosition),
-                      child: const Icon(
-                        Icons.more_vert,
-                        color: Colors.white,
+            child: Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 8),
+                  decoration: const BoxDecoration(color: Colors.black54),
+                  alignment: Alignment.center,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            title,
+                            style: const TextStyle(color: Colors.white)),
                       ),
-                    )
-//                       )
-                  ],
-                ))),
+                      Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTapDown: (details) =>
+                              _showMenu(context, details.globalPosition),
+                          child: const Icon(
+                            Icons.more_vert,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )),
       ),
     );
   }

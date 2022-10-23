@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kapi/data/kavita/api/api_client.dart';
 
 import 'package:kapi/data/kavita/models/series/series.dart';
 import 'package:kapi/data/kavita/models/series_detail/chapter.dart';
@@ -8,14 +10,15 @@ import 'package:kapi/data/kavita/models/series_detail/series_detail.dart';
 import 'package:kapi/data/kavita/models/series_detail/special.dart';
 import 'package:kapi/data/kavita/models/series_detail/storyline_chapter.dart';
 import 'package:kapi/data/kavita/models/series_detail/volume.dart';
+import 'package:kapi/logic/bloc/image_bloc.dart';
 import 'package:kapi/logic/cubit/series_metadata_cubit.dart';
 import 'package:kapi/screens/cubit/chip_cubit.dart';
 import 'package:kapi/screens/reader_screen.dart';
 
 import '../logic/cubit/series_detail_cubit.dart';
 import 'components/section_title.dart';
-// import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class MySeriesScreen extends StatelessWidget {
   final Series series;
@@ -28,7 +31,7 @@ class MySeriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(series.name!),
+          // title: Text(series.name!),
           actions: [
             PopupMenuButton(
                 icon: const Icon(Icons.more_horiz),
@@ -46,14 +49,20 @@ class MySeriesScreen extends StatelessWidget {
                     ])
           ],
         ),
-        body: MultiBlocProvider(providers: [
-          BlocProvider(
-              create: (context) =>
-                  SeriesMetadataCubit()..getMetadata(series.id!.toInt())),
-          BlocProvider(
-              create: (context) =>
-                  SeriesDetailCubit()..getDetail(series.id!.toInt())),
-        ], child: SeriesScreen(series: series)));
+        body: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                  create: (context) =>
+                      SeriesMetadataCubit()..getMetadata(series.id!.toInt())),
+              BlocProvider(
+                  create: (context) =>
+                      SeriesDetailCubit()..getDetail(series.id!.toInt())),
+              BlocProvider(create: (context) => ImageBloc()),
+            ],
+            child: RefreshIndicator(
+                onRefresh: () => Future.delayed(Duration(milliseconds: 3000),
+                    () => print('onSeries_onRefresh to be implemented')),
+                child: SeriesScreen(series: series))));
   }
 }
 
@@ -114,7 +123,7 @@ class SeriesScreen extends StatelessWidget {
           const SizedBox(height: 15),
           Row(children: [
             const buildSectionTitle('Description'),
-            const SizedBox(width: 8),
+            // const SizedBox(width: 8),
             BlocBuilder<SeriesMetadataCubit, SeriesMetadataState>(
               builder: (context, state) {
                 if (state is SeriesMetadataLoaded) {
@@ -173,7 +182,9 @@ class SeriesScreen extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return const Text('Loading...');
+                  return SizedBox(
+                      height: MediaQuery.of(context).size.height / 6,
+                      child: const Center(child: Text('Loading...')));
                 }
               },
             ),
@@ -237,22 +248,73 @@ class _buildChipContent extends StatelessWidget {
             itemBuilder: ((context, index) {
               return Card(
                 child: ListTile(
-                    onTap: () =>
-                        // isChapter
-                        //     ? print('Chapter')
-                        //     :
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) =>
-                                MyReaderScreen(chapter: content[index]))),
-                    title: isVolume
-                        ? Text(content[index].name!)
-                        : Text(content[index].title!)),
+                  onTap: () =>
+                      // isChapter
+                      //     ? print('Chapter')
+                      //     :
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              MyReaderScreen(chapter: content[index]))),
+                  title: isVolume
+                      ? Text(content[index].name!)
+                      : Text(content[index].title!),
+                  subtitle: Text('${content[index].pages.toString()} pages'),
+                  leading: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: _buildVolumeCoverLeadingImage(
+                      isVolume: isVolume,
+                      id: content[index].id,
+                    ),
+                  ),
+                ),
               );
             })),
       ),
     );
   }
 }
+
+class _buildVolumeCoverLeadingImage extends StatelessWidget {
+  final bool isVolume;
+  final int id;
+  final ApiClient apiClient = ApiClient();
+
+  _buildVolumeCoverLeadingImage({
+    Key? key,
+    required this.isVolume,
+    required this.id,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    String imageUrl = isVolume
+        ? "${apiClient.dio.options.baseUrl}/api/Image/volume-cover?volumeId=$id"
+        : "${apiClient.dio.options.baseUrl}/api/Image/chapter-cover?chapterId=$id";
+    Map<String, String> headers = {
+      "Authorization": apiClient.dio.options.headers["Authorization"]
+    };
+
+    // return
+    // BlocBuilder<ImageBloc, ImageState>(
+    //     bloc: isVolume
+    //         ? (context.read<ImageBloc>()..add(GetVolumeCoverImageEvent(id)))
+    //         : (context.read<ImageBloc>()..add(GetChapterCoverImageEvent(id))),
+    //     builder: (context, state) {
+    //       if (state is ImageLoaded) {
+    // return Image.network(state.imageUrl);
+    return Image.network(
+      imageUrl,
+      headers: headers,
+    );
+  }
+  // else {
+  //   return Image.asset(
+  //     'assets/images/image-placeholder.dark-min.png',
+  //   );
+}
+//         });
+//   }
+// }
 
 class _buildChips extends StatefulWidget {
   final SeriesDetail seriesDetail;
@@ -282,7 +344,7 @@ class _buildChipsState extends State<_buildChips> {
     super.initState();
 
     chips.addAll(seriesDetail.where((element) => element.isNotEmpty));
-    context.read<ChipCubit>().onBuild(seriesDetail.indexOf(chips[0]));
+    context.read<ChipCubit>().onSelected(seriesDetail.indexOf(chips[0]));
   }
 
   @override

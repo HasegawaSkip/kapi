@@ -32,7 +32,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series/all?PageSize=20',
+              '/api/Series/all',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -61,7 +61,7 @@ class _SeriesService implements SeriesService {
     )
             .compose(
               _dio.options,
-              '/api/Series?PageSize=20',
+              '/api/Series',
               queryParameters: queryParameters,
               data: _data,
             )

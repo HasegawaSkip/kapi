@@ -10,7 +10,7 @@ class ImageCubit extends Cubit<ImageState> {
 
   Future getSeriesCoverImage(int seriesId) async {
     emit(ImageLoading());
-    var image = await _repository.getSeriesCoverImage(seriesId);
-    emit(ImageLoaded(image));
+    var imageUrl = await _repository.getSeriesCoverImage(seriesId);
+    emit(ImageLoaded(imageUrl));
   }
 }

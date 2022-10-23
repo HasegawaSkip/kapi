@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../../data/models/server.dart';
@@ -36,9 +38,9 @@ class ServerCubit extends Cubit<ServerState> {
         username: username,
         password: password,
         key: key);
-    emit(ServerInitial());
     await _repository.addServer(newServer);
-    emit(ServerReady());
+    // emit(ServerReady());
+    getServers();
   }
 
   Future<void> removeServer(String serverKey) async {
@@ -51,5 +53,14 @@ class ServerCubit extends Cubit<ServerState> {
     emit(ServerInitial());
     await _repository.setCurrentServer(server);
     emit(ServerReady());
+    getServers();
+  }
+
+  Future<void> getCurrentServer() async {
+    emit(ServerInitial());
+    String? serverString = await _repository.getCurrentServer();
+
+    Server server = Server.fromJson(jsonDecode(serverString!));
+    emit(CurrentServerFetched(server));
   }
 }
