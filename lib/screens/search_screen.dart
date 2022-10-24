@@ -7,8 +7,8 @@ import 'package:kapi/screens/series_list_screen.dart';
 
 import '../data/kavita/models/library.dart';
 
-class MySearchScreen extends StatelessWidget {
-  const MySearchScreen({super.key});
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

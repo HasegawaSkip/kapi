@@ -7,7 +7,8 @@ import 'package:kapi/screens/search_screen.dart';
 import '../../data/models/server.dart';
 import '../../logic/cubit/server_cubit.dart';
 import '../home_screen.dart';
-import '../settings_screen.dart';
+// import '../settings_screen.dart';
+import '../legacy/settings_screen_legacy.dart';
 import 'kavita_login_modal.dart';
 
 class MyScaffold extends StatefulWidget {
@@ -82,7 +83,7 @@ class _MyScaffoldState extends State<MyScaffold> {
           index: _selectedIndex,
           children: [
             MyHomeScreen(),
-            MySearchScreen(),
+            SearchScreen(),
             DiscoverScreen(),
             SettingsScreen()
           ],
@@ -176,7 +177,17 @@ void _buildAccountPickerModal(context) => showDialog(
                 ],
               );
             } else {
-              return const CircularProgressIndicator();
+              return const SimpleDialog(
+                children: [
+                  ButtonBar(
+                    alignment: MainAxisAlignment.center,
+                    children: [
+                      _buildAccountAddButton(),
+                      _buildAccountAddDefaultButton()
+                    ],
+                  )
+                ],
+              );
             }
           },
         ),
