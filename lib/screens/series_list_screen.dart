@@ -54,8 +54,7 @@ class SeriesListScreen extends StatelessWidget {
                       return GestureDetector(
                         onTap: (() => Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    MySeriesScreen(series: series)))),
+                                builder: (context) => MySeriesScreen(series)))),
                         child: BlocProvider(
                           create: (context) => ImageCubit()
                             ..getSeriesCoverImage(series.id!.toInt()),
@@ -64,11 +63,13 @@ class SeriesListScreen extends StatelessWidget {
                               if (state is ImageLoaded) {
                                 return GestureDetector(
                                   child: SeriesCard(
+                                      series: series,
                                       title: series.name!,
                                       coverImage: NetworkImage(state.imageUrl)),
                                 );
                               } else {
                                 return SeriesCard(
+                                    series: series,
                                     title: series.name!,
                                     coverImage: const AssetImage(
                                         'assets/images/image-placeholder.dark-min.png'));

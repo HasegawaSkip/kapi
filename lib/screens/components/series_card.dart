@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:kapi/data/kavita/models/series.dart';
+
+import '../series_detail_screen.dart';
 
 class SeriesCard extends StatelessWidget {
   final String title;
-  final ImageProvider coverImage; //NetworkImage or AssetImage
+  final ImageProvider coverImage;
+  final Series? series;
 
-  const SeriesCard({Key? key, required this.title, required this.coverImage})
+  const SeriesCard(
+      {Key? key, this.series, required this.title, required this.coverImage})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width / 3.5;
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Container(
@@ -36,17 +42,21 @@ class SeriesCard extends StatelessWidget {
                             title,
                             style: const TextStyle(color: Colors.white)),
                       ),
-                      Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTapDown: (details) =>
-                              _showMenu(context, details.globalPosition),
-                          child: const Icon(
-                            Icons.more_vert,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                      (series != null)
+                          ? Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTapDown: (details) {
+                                  _showMenu(
+                                      context, details.globalPosition, series!);
+                                },
+                                child: const Icon(
+                                  Icons.more_vert,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          : const SizedBox.shrink(),
                     ],
                   ),
                 ),
@@ -55,19 +65,27 @@ class SeriesCard extends StatelessWidget {
       ),
     );
   }
+}
 
-  Future<String?> _showMenu(BuildContext context, Offset globalPosition) {
-    double left = globalPosition.dx - 200;
-    double top = globalPosition.dy + 20;
-    return showMenu(
-      context: context,
-      position: RelativeRect.fromLTRB(left, top, 0, 0),
-      items: [
-        PopupMenuItem<String>(child: const Text('Open Series'), value: '1'),
-        PopupMenuItem<String>(child: const Text('Mark as Read'), value: '2'),
-        PopupMenuItem<String>(
-            child: const Text('Add to Want to Read'), value: '3'),
-      ],
-    );
-  }
+Future<String?> _showMenu(
+    BuildContext context, Offset globalPosition, Series series) {
+  double left = globalPosition.dx - 200;
+  double top = globalPosition.dy + 20;
+
+  return showMenu(
+    context: context,
+    position: RelativeRect.fromLTRB(left, top, 0, 0),
+    items: [
+      PopupMenuItem<String>(
+          onTap: () {
+            Future(() => Navigator.of(context).push(MaterialPageRoute(
+                builder: ((context) => MySeriesScreen(series)))));
+          },
+          value: '0',
+          child: const Text('Open Series')),
+      PopupMenuItem<String>(value: '1', child: const Text('Mark as Read')),
+      PopupMenuItem<String>(
+          child: const Text('Add to Want to Read'), value: '2'),
+    ],
+  );
 }

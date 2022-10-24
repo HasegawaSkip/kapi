@@ -55,7 +55,7 @@ class _buildRecentlyUpdatedSeriesCarousel extends StatelessWidget {
       builder: (context, state) {
         if (state is HomeScreenSeriesLoaded &&
             state.recentlyUpdated.isNotEmpty) {
-          return Container(
+          return SizedBox(
             height: 200.0,
             child: ListView.builder(
               primary: false,
@@ -75,11 +75,13 @@ class _buildRecentlyUpdatedSeriesCarousel extends StatelessWidget {
                       builder: (context, state) {
                         if (state is ImageLoaded) {
                           return SeriesCard(
+                            // series: const Series(id: 0),
                             title: series.seriesName!,
                             coverImage: NetworkImage(state.imageUrl),
                           );
                         } else {
                           return SeriesCard(
+                            // series: const Series(id: 0),
                             title: series.seriesName!,
                             coverImage: const NetworkImage(
                                 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-82gwrvQV6OBc.png'),
@@ -172,7 +174,7 @@ class SeriesCarousel extends StatelessWidget {
 
           return InkWell(
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: ((context) => MySeriesScreen(series: series)))),
+                builder: ((context) => MySeriesScreen(series)))),
             child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
@@ -181,11 +183,13 @@ class SeriesCarousel extends StatelessWidget {
                   builder: (context, state) {
                     if (state is ImageLoaded) {
                       return SeriesCard(
+                        series: series,
                         title: series.name!,
                         coverImage: NetworkImage(state.imageUrl),
                       );
                     } else {
                       return SeriesCard(
+                        series: series,
                         title: series.name!,
                         // coverImage: const NetworkImage(
                         //     'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-82gwrvQV6OBc.png'),

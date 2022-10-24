@@ -26,6 +26,7 @@ class SeriesRepository {
   }
 
   Future<List<Series>> getOnDeck() async {
+    // await ApiClient.init();
     return await apiClient.seriesService.getOnDeck({});
   }
 

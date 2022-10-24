@@ -10,7 +10,7 @@ import 'package:kapi/data/kavita/models/series_detail/special.dart';
 import 'package:kapi/data/kavita/models/series_detail/storyline_chapter.dart';
 import 'package:kapi/data/kavita/models/series_detail/volume.dart';
 import 'package:kapi/logic/bloc/image_bloc.dart';
-import 'package:kapi/logic/cubit/image_cubit.dart';
+// import 'package:kapi/logic/cubit/image_cubit.dart';
 import 'package:kapi/logic/cubit/series_metadata_cubit.dart';
 import 'package:kapi/screens/cubit/chip_cubit.dart';
 import 'package:kapi/screens/reader_screen.dart';
@@ -19,12 +19,13 @@ import 'package:kapi/screens/series_detail_info_screen.dart';
 import '../logic/cubit/series_detail_cubit.dart';
 import 'components/section_title.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class MySeriesScreen extends StatelessWidget {
   final Series series;
-  const MySeriesScreen({
+  const MySeriesScreen(
+    this.series, {
     Key? key,
-    required this.series,
   }) : super(key: key);
 
   @override
@@ -249,24 +250,35 @@ class _buildChipContent extends StatelessWidget {
             // scrollDirection: Axis.horizontal,
             itemCount: content.length,
             itemBuilder: ((context, index) {
-              return Card(
-                child: ListTile(
-                  onTap: () =>
-                      // isChapter
-                      //     ? print('Chapter')
-                      //     :
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>
-                              MyReaderScreen(chapter: content[index]))),
-                  title: isVolume
-                      ? Text(content[index].name!)
-                      : Text(content[index].title!),
-                  subtitle: Text('${content[index].pages.toString()} pages'),
-                  leading: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: _buildVolumeCoverLeadingImage(
-                      isVolume: isVolume,
-                      id: content[index].id,
+              return SlideableItems(
+                child: Card(
+                  child: ListTile(
+                    onTap: () =>
+                        // isChapter
+                        //     ? print('Chapter')
+                        //     :
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                MyReaderScreen(chapter: content[index]))),
+                    title: isVolume
+                        ? Text(content[index].name!)
+                        : Text(content[index].title!),
+                    subtitle: Text('${content[index].pages.toString()} pages'),
+                    leading: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: _buildVolumeCoverLeadingImage(
+                        isVolume: isVolume,
+                        id: content[index].id,
+                      ),
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(
+                        Icons.more_vert,
+                        size: 20,
+                      ),
+                      onPressed: () {
+                        // TODO #6 showMenu on individual item (volume/chapter..)
+                      },
                     ),
                   ),
                 ),
@@ -413,4 +425,45 @@ enum TabID {
   Storyline,
   Volumes,
   Chapters,
+}
+
+class SlideableItems extends StatelessWidget {
+  final Widget child;
+
+  const SlideableItems({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Slidable(
+      // Specify a key if the Slidable is dismissible.
+      // key: const ValueKey(0),
+
+      // The end action pane is the one at the right or the bottom side.
+      endActionPane: ActionPane(
+        motion: ScrollMotion(),
+        children: [
+          SlidableAction(
+            // An action can be bigger than the others.
+            flex: 2,
+            onPressed: ((context) => print('a')),
+            backgroundColor: Color(0xFF7BC043),
+            foregroundColor: Colors.white,
+            icon: Icons.download,
+            label: 'Download',
+          ),
+          SlidableAction(
+            onPressed: ((context) => print('b')),
+            backgroundColor: Color(0xFF0392CF),
+            foregroundColor: Colors.white,
+            icon: Icons.info,
+            label: 'Info',
+          ),
+        ],
+      ),
+
+      // The child of the Slidable is what the user sees when the
+      // component is not dragged.
+      child: child,
+    );
+  }
 }
