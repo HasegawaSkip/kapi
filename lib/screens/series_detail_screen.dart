@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,14 +10,15 @@ import 'package:kapi/data/kavita/models/series_detail/special.dart';
 import 'package:kapi/data/kavita/models/series_detail/storyline_chapter.dart';
 import 'package:kapi/data/kavita/models/series_detail/volume.dart';
 import 'package:kapi/logic/bloc/image_bloc.dart';
+import 'package:kapi/logic/cubit/image_cubit.dart';
 import 'package:kapi/logic/cubit/series_metadata_cubit.dart';
 import 'package:kapi/screens/cubit/chip_cubit.dart';
 import 'package:kapi/screens/reader_screen.dart';
+import 'package:kapi/screens/series_detail_info_screen.dart';
 
 import '../logic/cubit/series_detail_cubit.dart';
 import 'components/section_title.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class MySeriesScreen extends StatelessWidget {
   final Series series;
@@ -62,7 +62,7 @@ class MySeriesScreen extends StatelessWidget {
             child: RefreshIndicator(
                 onRefresh: () => Future.delayed(Duration(milliseconds: 3000),
                     () => print('onSeries_onRefresh to be implemented')),
-                child: SeriesScreen(series: series))));
+                child: SeriesScreen(series))));
   }
 }
 
@@ -80,9 +80,9 @@ class MySeriesScreen extends StatelessWidget {
 //               ),
 
 class SeriesScreen extends StatelessWidget {
-  const SeriesScreen({
+  const SeriesScreen(
+    this.series, {
     Key? key,
-    required this.series,
   }) : super(key: key);
 
   final Series series;
@@ -115,8 +115,11 @@ class SeriesScreen extends StatelessWidget {
                     label: const Text('Read'),
                     icon: const FaIcon(FontAwesomeIcons.bookOpen)),
                 ElevatedButton(
-                    onPressed: () => print('object'),
-                    child: const Icon(Icons.remove_red_eye_outlined)),
+                    onPressed: () =>
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: ((context) => SeriesInfo(series)),
+                        )),
+                    child: const Icon(Icons.info)),
               ],
             ),
           ),
