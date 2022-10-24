@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:kapi/screens/discover_screen.dart';
 import 'package:kapi/screens/search_screen.dart';
+
 import '../../data/models/server.dart';
 import '../../logic/cubit/server_cubit.dart';
-import '../settings_screen.dart';
 import '../home_screen.dart';
+import '../settings_screen.dart';
 import 'kavita_login_modal.dart';
 
 class MyScaffold extends StatefulWidget {
@@ -81,7 +83,7 @@ class _MyScaffoldState extends State<MyScaffold> {
           children: [
             MyHomeScreen(),
             MySearchScreen(),
-            MyDiscoverScreen(),
+            DiscoverScreen(),
             SettingsScreen()
           ],
         ),
@@ -157,12 +159,18 @@ void _buildAccountPickerModal(context) => showDialog(
                       const Divider(
                         thickness: 1,
                       ),
-                      _buildAccountPickerDefault(),
+                      const _buildAccountPickerDefault(),
                       const Divider(
                         thickness: 1,
                       ),
-                      _buildAccountPickerList(),
-                      _buildAccountAddButton()
+                      const _buildAccountPickerList(),
+                      const ButtonBar(
+                        alignment: MainAxisAlignment.center,
+                        children: [
+                          _buildAccountAddButton(),
+                          _buildAccountAddDefaultButton()
+                        ],
+                      )
                     ],
                   ),
                 ],
@@ -185,10 +193,10 @@ class _buildAccountPickerDefault extends StatelessWidget {
         child: BlocBuilder<ServerCubit, ServerState>(
           builder: (context, state) {
             if (state is CurrentServerFetched) {
-              return ServerTile(state.server);
+              return ServerTile(state.server, true);
             }
-            return ListTile(
-              title: Text('asd'),
+            return const ListTile(
+              title: SizedBox.shrink(),
             );
           },
         ));
@@ -220,7 +228,7 @@ class _buildAccountPickerList extends StatelessWidget {
                   itemCount: state.servers.length,
                   itemBuilder: ((context, index) {
                     Server server = state.servers[index];
-                    return ServerTile(server);
+                    return ServerTile(server, false);
                   })),
             ),
           );
@@ -233,48 +241,48 @@ class _buildAccountPickerList extends StatelessWidget {
 }
 
 class ServerTile extends StatelessWidget {
-  const ServerTile(
-    this.server, {
-    Key? key,
-  }) : super(key: key);
-
   final Server server;
+  final bool isDefault;
+  const ServerTile(this.server, this.isDefault, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        onTap: () {
-          context.read<ServerCubit>().setCurrentServer(server);
-          Navigator.pop(context);
-        },
-        leading: CircleAvatar(
-            backgroundColor: const Color(0xff4ac694),
-            child: Text(
-              server.username.isEmpty ? 'K' : server.username.substring(0, 1),
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.white),
-            )),
-        title: Text('${server.name} (${server.username})'),
-        subtitle: Text(server.url),
-        trailing: Row(mainAxisSize: MainAxisSize.min, children: [
-          // IconButton(
-          //   iconSize: 20,
-          //   onPressed: () => print('Edit button'),
-          //   icon: const Icon(
-          //     Icons.edit,
-          //     color: Colors.black,
-          //   ),
-          // ),
-          IconButton(
-            iconSize: 20,
-            onPressed: () =>
-                context.read<ServerCubit>().removeServer(server.key),
-            icon: const Icon(
-              Icons.delete,
-              color: Colors.black,
-            ),
-          ),
-        ]));
+      onTap: () {
+        context.read<ServerCubit>().setCurrentServer(server);
+        Navigator.pop(context);
+      },
+      leading: CircleAvatar(
+          backgroundColor: const Color(0xff4ac694),
+          child: Text(
+            server.username.isEmpty ? 'K' : server.username.substring(0, 1),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.white),
+          )),
+      title: Text('${server.name} (${server.username})'),
+      subtitle: Text(server.url),
+      trailing:
+          // Row(mainAxisSize: MainAxisSize.min, children: [
+          isDefault
+              ? IconButton(
+                  iconSize: 20,
+                  onPressed: () => print('Edit button'),
+                  icon: const Icon(
+                    Icons.edit,
+                    color: Colors.black,
+                  ),
+                )
+              : IconButton(
+                  iconSize: 20,
+                  onPressed: () =>
+                      context.read<ServerCubit>().removeServer(server.key),
+                  icon: const Icon(
+                    Icons.delete,
+                    color: Colors.black,
+                  ),
+                ),
+      // ])
+    );
   }
 }
 
@@ -294,6 +302,29 @@ class _buildAccountAddButton extends StatelessWidget {
           builder: ((context) {
             return const KavitaLoginModal();
           })),
+    );
+  }
+}
+
+class _buildAccountAddDefaultButton extends StatelessWidget {
+  const _buildAccountAddDefaultButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      icon: const Icon(Icons.control_point),
+      label: const Text('Add Kavita Demo'),
+      style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.white,
+          backgroundColor: const Color(0xff4ac694)),
+      onPressed: () {
+        context.read<ServerCubit>().addServer(
+            serverName: 'Kavita Demo',
+            url: 'https://demo.kavitareader.com',
+            username: 'demouser',
+            password: 'Demouser64');
+        Navigator.pop(context);
+      },
     );
   }
 }
