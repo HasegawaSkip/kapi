@@ -14,13 +14,13 @@ class SettingsScreen extends StatelessWidget {
 
     return BlocProvider(
       create: (context) => ServerCubit()..getServers(),
-      child: _buildAccountList(),
+      child: const AccountList(),
     );
   }
 }
 
-class _buildAccountList extends StatelessWidget {
-  const _buildAccountList({
+class AccountList extends StatelessWidget {
+  const AccountList({
     Key? key,
   }) : super(key: key);
 
