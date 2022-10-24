@@ -68,7 +68,8 @@ class LoginModal extends StatelessWidget {
                       keyboardType: TextInputType.name,
                       controller: nameController,
                       decoration: const InputDecoration(
-                          border: InputBorder.none, hintText: 'My Kavita'),
+                          border: InputBorder.none,
+                          hintText: 'Name (e.g. My Kavita)'),
                     ),
                   )),
               const SizedBox(height: 15),
@@ -85,7 +86,7 @@ class LoginModal extends StatelessWidget {
                       controller: urlController,
                       decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'https://demo.kavitareader.com'),
+                          hintText: 'Url (e.g. https://demo.kavitareader.com)'),
                     ),
                   )),
               const SizedBox(height: 5),
@@ -103,7 +104,7 @@ class LoginModal extends StatelessWidget {
                       keyboardType: TextInputType.text,
                       controller: usernameController,
                       decoration: const InputDecoration(
-                          border: InputBorder.none, hintText: 'demouser'),
+                          border: InputBorder.none, hintText: 'Username'),
                     ),
                   )),
               const SizedBox(height: 15),
@@ -120,7 +121,7 @@ class LoginModal extends StatelessWidget {
                       obscureText: true,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Demouser64',
+                        hintText: 'Password',
                       ),
                     ),
                   )),

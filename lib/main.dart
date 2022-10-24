@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Kapi',
       home: const MyScaffold(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
     );
   }
 }

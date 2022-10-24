@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyDiscoverScreen extends StatefulWidget {
-  const MyDiscoverScreen({super.key});
+class DiscoverScreen extends StatefulWidget {
+  const DiscoverScreen({super.key});
 
   @override
-  State<MyDiscoverScreen> createState() => _MyDiscoverScreenState();
+  State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
 
-class _MyDiscoverScreenState extends State<MyDiscoverScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(

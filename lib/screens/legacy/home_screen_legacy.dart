@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kapi/logic/bloc/login_bloc.dart';
 import 'package:kapi/screens/kavita_login_screen.dart';
-import '../data/kavita/repositories/account_repository.dart';
-import 'components/scaffold.dart';
+import '../../data/kavita/repositories/account_repository.dart';
+import '../components/scaffold.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
