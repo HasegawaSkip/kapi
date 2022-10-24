@@ -8,8 +8,8 @@ import 'observer.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Bloc.observer = CounterObserver();
-  ApiClient();
-  await ApiClient.init();
+  // ApiClient();
+  // await ApiClient.init();
   runApp(const MyApp());
 }
 
