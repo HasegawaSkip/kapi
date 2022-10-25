@@ -25,6 +25,8 @@ class SearchScreen extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.search),
             title: TextField(
+              readOnly: true,
+              autofocus: false,
               decoration:
                   InputDecoration(hintText: 'Search', border: InputBorder.none),
             ),

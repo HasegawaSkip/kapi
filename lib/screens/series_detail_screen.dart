@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,7 +33,7 @@ class MySeriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // title: Text(series.name!),
+          title: Text(describeEnum(MangaFormat.values[series.format ?? 2])),
           actions: [
             PopupMenuButton(
                 icon: const Icon(Icons.more_horiz),
@@ -97,10 +98,9 @@ class SeriesScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSectionTitle(
-            series.name!,
-            // style: Theme.of(context).textTheme.titleMedium,
-          ),
+          buildSectionTitle(series.name!
+              // style: Theme.of(context).textTheme.titleMedium,
+              ),
           // Text(series.summary.toString() == null ? series.summary : ''),
           const SizedBox(height: 15),
           Padding(
@@ -467,3 +467,5 @@ class SlideableItems extends StatelessWidget {
     );
   }
 }
+
+enum MangaFormat { IMAGE, ARCHIVE, UNKNOWN, EPUB, PDF }
