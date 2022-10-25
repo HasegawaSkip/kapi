@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kapi/data/kavita/models/libraryDto.dart';
 import 'package:kapi/logic/cubit/library_cubit.dart';
+import 'package:kapi/screens/components/section_title.dart';
 import 'package:kapi/screens/series_list_screen.dart';
 
 import '../data/kavita/models/library.dart';
@@ -14,13 +15,50 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => LibraryCubit()..getLibraryNames(),
-      child: _buildSearchScreen(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: buildSectionTitle('Library'),
+          ),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: TextField(
+              decoration:
+                  InputDecoration(hintText: 'Search', border: InputBorder.none),
+            ),
+            trailing: Icon(Icons.cancel),
+          ),
+          Divider(thickness: 1),
+          Expanded(child: _buildFixedList()),
+          Expanded(child: _buildLibraryList()),
+        ],
+      ),
     );
   }
 }
 
-class _buildSearchScreen extends StatelessWidget {
-  const _buildSearchScreen({
+class _buildFixedList extends StatelessWidget {
+  const _buildFixedList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        ListTile(
+          leading: FaIcon(FontAwesomeIcons.rectangleList),
+          title: Text('All Series'),
+        )
+      ],
+    );
+  }
+}
+
+class _buildLibraryList extends StatelessWidget {
+  const _buildLibraryList({
     Key? key,
   }) : super(key: key);
 

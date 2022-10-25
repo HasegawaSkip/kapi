@@ -448,7 +448,7 @@ class SlideableItems extends StatelessWidget {
             onPressed: ((context) => print('a')),
             backgroundColor: Color(0xFF7BC043),
             foregroundColor: Colors.white,
-            icon: Icons.download,
+            icon: FontAwesomeIcons.circleArrowDown,
             label: 'Download',
           ),
           SlidableAction(
